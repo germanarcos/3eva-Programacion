@@ -1,0 +1,42 @@
+import java.util.TreeMap;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+public class Contrasena {
+	
+	public boolean modificarClave(TreeMap<Usuario, String> usuarios, Usuario usr) {
+		String nombre = Leer.pedirCadena("Introduce el nombre del usuario a modificar");
+		if (usr != null) {
+			String pwd = Leer.pedirCadena("Introduce la nueva contraseña");
+			pwd = codificar(pwd);
+			usr.setContraEncriptada(pwd);
+			usuarios.put(usr, pwd);
+			return true;
+		}
+		return false;
+
+	}
+	
+	public static String codificar(String psswd) {
+		String actual = "";
+		for (int i = 0; i < psswd.length(); i++) {
+			actual += (char) (psswd.charAt(i) + 2);
+		}
+		return actual;
+	}
+	
+	public static boolean contrasenaValida(String contra) {
+		// Expresión regular para que contenga solo alfanumericos
+		Pattern patron = Pattern.compile("[a-z0-9A-ZñÑ]+");
+		Matcher comprobar = patron.matcher(contra);
+		return comprobar.matches();
+	}
+	
+	public static String nuevaContrasena(){
+		String pswd
+		do {
+			pswd = Leer.pedirCadena("Introduce la contraseña");
+		} while (!Contrasena.contrasenaValida(pswd));
+	}
+
+}

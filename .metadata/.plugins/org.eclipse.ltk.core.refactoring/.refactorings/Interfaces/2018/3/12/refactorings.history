@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Move 4 elements to &apos;Interfaces/src&apos;&#x0D;&#x0A;- Original project: &apos;Interfaces&apos;&#x0D;&#x0A;- Destination element: &apos;Interfaces/src&apos;&#x0D;&#x0A;- Original elements:&#x0D;&#x0A;     IpilaDeEnteros.java&#x0D;&#x0A;     GestionPila.java&#x0D;&#x0A;     PilaDinamica.java&#x0D;&#x0A;     PilaFija.java&#x0D;&#x0A;- Update references to refactored element" description="Move files" destination="/src" element1="PilaConInterface/src/IpilaDeEnteros.java" element2="PilaConInterface/src/GestionPila.java" element3="PilaConInterface/src/PilaDinamica.java" element4="PilaConInterface/src/PilaFija.java" files="4" flags="589830" folders="0" id="org.eclipse.jdt.ui.move" policy="org.eclipse.jdt.ui.moveResources" qualified="false" references="true" stamp="1521559876000" units="0" version="1.0"/>
+</session>

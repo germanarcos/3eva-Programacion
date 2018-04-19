@@ -1,0 +1,59 @@
+import java.util.TreeMap;
+
+public class Admin extends Usuario {
+
+	public Admin(String nombre, String contraEncriptada) {
+		super(nombre, contraEncriptada);
+	}
+
+	public String getNombreOtro(Usuario user) {
+		return user.getNombre();
+	}
+
+	public void setNombreOtro(String nombre, Usuario user) {
+		user.setNombre(nombre);
+	}
+
+	public String getContraEncriptadaOtro(Usuario user) {
+		return user.getContraEncriptada();
+	}
+
+	public void setContraEncriptadaOtro(String contraEncriptada, Usuario user) {
+		user.setContraEncriptada(contraEncriptada);
+	}
+
+	public String ban(Usuario user) {
+		if (user.baneado) {
+			return ("El usuario " + user.getNombre() + " ya estaba baneado.");
+			
+		} else {
+			user.baneado = true;
+			return ("El usuario " + user.getNombre())+" ha sido baneado.";
+		}
+	}
+
+	public String unban(Usuario user) {
+		if (user.baneado) {
+			user.baneado = false;
+			return ("El usuario " + user.getNombre() + " ha sido unbaneado.");
+		} else {
+			return ("El usuario " + user.getNombre() + "no estaba baneado.");
+		}
+	}
+
+	public String toString() {
+		String devuelve = "Usuario: " + getNombre() + "\n";
+		return devuelve;
+	}
+	
+	public static boolean borrarUsuario(TreeMap<Usuario, String> usuarios) {
+		String nombre = Leer.pedirCadena("Introduce el nombre del usuario a borrar");
+		Usuario usr = devolverUsuario(nombre, usuarios);
+		if (usr != null) {
+			usuarios.remove(usr);
+			return true;
+		} else {
+			return false;
+		}
+	}
+}

@@ -1,0 +1,36 @@
+
+public class Admin extends Usuario{
+
+	public Admin(String nombre, String contraEncriptada) {
+		super(nombre, contraEncriptada);
+	}
+	public String getNombreOtro(Usuario user) {
+		return user.getNombre();
+	}
+
+	public void setNombreOtro(String nombre, Usuario user ) {
+		user.setNombre(nombre);
+	}
+
+	public String getContraEncriptadaOtro(Usuario user) {
+		return user.getContraEncriptada();
+	}
+
+	public void setContraEncriptadaOtro(String contraEncriptada, Usuario user) {
+		user.setContraEncriptada(contraEncriptada);
+	}
+	
+	public boolean baneaOtro(Usuario user){
+		if (user.baneado){
+			return false;
+		}else{
+			user.baneado=true;
+			return true;
+		}
+	}
+	
+	public String toString(){
+		String devuelve = "Usuario: "+ getNombre() +"\n";
+		return devuelve;
+	}
+}

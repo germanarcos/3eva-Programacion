@@ -1,0 +1,26 @@
+
+public class Usuario {
+	private String nombre;
+	private String contraEncriptada;
+	private boolean admin;
+	
+	
+	public String getNombre() {
+		return nombre;
+	}
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+	public String getContraEncriptada() {
+		return contraEncriptada;
+	}
+	public void setContraEncriptada(String contraEncriptada) {
+		this.contraEncriptada = contraEncriptada;
+	}
+	public boolean isAdmin() {
+		return admin;
+	}
+	public void setAdmin(boolean admin) {
+		this.admin = admin;
+	}
+}

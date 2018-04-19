@@ -1,0 +1,45 @@
+
+public class Usuario {
+	private String nombre;
+	private String contraEncriptada;
+	private boolean admin;
+
+	public Usuario(String nombre, String contraEncriptada, boolean admin) {
+		this.nombre = nombre;
+		this.contraEncriptada = contraEncriptada;
+		this.admin = admin;
+	}
+
+	public Usuario(String nombre, String contraEncriptada) {
+		this.nombre = nombre;
+		this.contraEncriptada = contraEncriptada;
+		admin = false;
+	}
+
+	public String getNombre() {
+		return nombre;
+	}
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+
+	public String getContraEncriptada() {
+		return contraEncriptada;
+	}
+
+	public void setContraEncriptada(String contraEncriptada) {
+		this.contraEncriptada = contraEncriptada;
+	}
+
+	public boolean isAdmin() {
+		return admin;
+	}
+
+	public void setAdmin(boolean admin) {
+		this.admin = admin;
+	}
+	public Integer compareTo(Usuario usr){
+		return nombre.compareTo(Usr.getNombre());
+	}
+}

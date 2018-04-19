@@ -1,0 +1,23 @@
+
+public class Admin extends Usuario{
+
+	public Admin(String nombre, String contraEncriptada) {
+		super(nombre, contraEncriptada);
+	}
+	public String getNombreOtro(Usuario user) {
+		return user.nombre;
+	}
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+
+	public String getContraEncriptada() {
+		return contraEncriptada;
+	}
+
+	public void setContraEncriptada(String contraEncriptada) {
+		this.contraEncriptada = contraEncriptada;
+	}
+
+}

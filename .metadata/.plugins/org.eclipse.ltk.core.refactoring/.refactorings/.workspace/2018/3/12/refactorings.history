@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename Java project &apos;Pila y cola con interfaec&apos; to &apos;Pila y cola con interface&apos;&#x0D;&#x0A;- Original element: &apos;Pila y cola con interfaec&apos;&#x0D;&#x0A;- Renamed element: &apos;Pila y cola con interfaec&apos;&#x0D;&#x0A;- Update references to refactored element" description="Rename Java project &apos;Pila y cola con interfaec&apos;" flags="7" id="org.eclipse.jdt.ui.rename.java.project" input="=Pila y cola con interfaec" name="Pila y cola con interface" references="true" stamp="1521558391096" version="1.0"/>
+</session>

@@ -22,6 +22,11 @@
 		<item value="false" key="WizardFileSystemResourceImportPage1.STORE_CREATE_CONTAINER_STRUCTURE_ID"/>
 		<item value="false" key="WizardFileSystemResourceImportPage1.STORE_OVERWRITE_EXISTING_RESOURCES_ID"/>
 		<list key="WizardFileSystemResourceImportPage1.STORE_SOURCE_NAMES_ID">
+			<item value="C:\Users\usuario\Desktop\Asignaturas\Programacion\Utilidades"/>
+			<item value="C:\Users\usuario\Desktop\Asignaturas\Programacion\tema_11\LibroUnAutorInterfaceOrdenar"/>
+			<item value="C:\Users\usuario\Desktop\Asignaturas\Programacion\ClasesGenericas\Repaso_y_ejemplo_interfaces\Repaso_y_ejemplo_interfaces\PilaConInterface"/>
+			<item value="C:\Users\usuario\Desktop\Asignaturas\Programacion\ClasesGenericas\Repaso_y_ejemplo_interfaces\Repaso_y_ejemplo_interfaces"/>
+			<item value="C:\Users\usuario\Desktop\Asignaturas\Programacion\ClasesGenericas\EjemplosClasesGenericas\EjemplosClasesGenericas"/>
 			<item value="C:\Users\usuario\Desktop\Asignaturas\Programacion\tema_11\ListaPersonas"/>
 			<item value="C:\Users\usuario\Desktop\Asignaturas\Programacion\tema_11\ListaEnlazada"/>
 		</list>

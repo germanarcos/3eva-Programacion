@@ -1,0 +1,56 @@
+import java.util.TreeMap;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+public class Contrasena {
+	
+	public static boolean modificarClave(TreeMap<Usuario, String> usuarios, Usuario usr) {
+		String nombre = Leer.pedirCadena("Introduce el nombre del usuario a modificar");
+		if (usr != null) {
+			String pwd = Leer.pedirCadena("Introduce la nueva contraseña");
+			pwd = codificar(pwd);
+			usr.setContraEncriptada(pwd);
+			usuarios.put(usr, pwd);
+			return true;
+		}
+		return false;
+
+	}
+	//Metodo para codificar
+	private static String codificar(String psswd) {
+		String actual = "";
+		for (int i = 0; i < psswd.length(); i++) {
+			actual += (char) (psswd.charAt(i) + 2);
+		}
+		return actual;
+	}
+	
+	
+	public static boolean comprobar(String pswd){
+		String prueba = Leer.pedirCadena("Introduce la contraseña");
+		if(codificar(prueba).equals(pswd)){
+			return true;
+		}else
+			return false;
+	}
+	//Comprueba que sea una contrasena correcta
+	private static boolean contrasenaValida(String contra) {
+		// Expresión regular para que contenga solo alfanumericos
+		Pattern patron = Pattern.compile("[a-z0-9A-ZñÑ]+");
+		Matcher comprobar = patron.matcher(contra);
+		return comprobar.matches();
+	}
+	
+	
+	//Devuelve contrasena codificada
+	public static String nuevaContrasena(){
+		String pswd;
+		String encriptada;
+		do {
+			pswd = Leer.pedirCadena("Introduce la contraseña");
+		} while (!Contrasena.contrasenaValida(pswd));
+		encriptada=codificar(pswd);
+		return encriptada;
+	}
+
+}

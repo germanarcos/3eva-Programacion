@@ -1,0 +1,44 @@
+import java.util.TreeMap;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+public class Usuario {
+	private String nombre;
+	private String contraEncriptada;
+	protected boolean baneado;
+
+	public Usuario(String nombre, String contraEncriptada) {
+		this.nombre = nombre;
+		this.contraEncriptada = contraEncriptada;
+		baneado = false;
+	}
+
+	public String getNombre() {
+		return nombre;
+	}
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+
+	public String getContraEncriptada() {
+		return contraEncriptada;
+	}
+
+	public void setContraEncriptada(String contraEncriptada) {
+		this.contraEncriptada = contraEncriptada;
+	}
+
+	public void cambiarContrasena() {
+		contraEncriptada = Contrasena.nuevaContrasena();
+	}
+
+	public String toString() {
+		String devuelve = "Usuario: " + nombre + "\n";
+		if (baneado) {
+			devuelve += "BANEADO\n";
+		}
+		return devuelve;
+	}
+
+}

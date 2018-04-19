@@ -1,0 +1,116 @@
+import java.util.TreeMap;
+
+public class gestionUsuarios {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		String usuario;
+		String psswd;
+		Integer opcion;
+		TreeMap<String, String> usuarios = new TreeMap<String, String>();
+		do {
+			opcion = menu();
+			switch (opcion) {
+			case 1:
+				if (insertarUsuario(usuarios)) {
+					Leer.mostrarEnPantalla("Se ha creado el usuario");
+				} else {
+					Leer.mostrarEnPantalla("No se ha podido crear el usuario");
+				}
+
+				break;
+			case 2:
+				if (borrarUsuario(usuarios)) {
+					Leer.mostrarEnPantalla("Se ha borrado el usuario");
+				} else {
+					Leer.mostrarEnPantalla("No se ha podido borrar el usuario");
+				}
+				break;
+			case 3:
+				if (modificarClave(usuarios)) {
+					Leer.mostrarEnPantalla("Se ha modificado la clave");
+				} else {
+					Leer.mostrarEnPantalla("No se ha podido modificar la clave");
+				}
+				break;
+			case 4:
+				break;
+			case 0:
+				Leer.mostrarEnPantalla("Saliendo...");
+			default:
+				Leer.mostrarEnPantalla("No has escogido una opción correcta");
+				break;
+			}
+		} while (opcion != 0);
+	}
+
+	public static String codificar(String psswd) {
+		String actual = "";
+		for (int i = 0; i < psswd.length(); i++) {
+			actual += (char) (psswd.charAt(i) + 2);
+		}
+		return actual;
+	}
+
+	public static boolean comprobar(String prueba, TreeMap<String, String> usuarios) {
+		String nombre = Leer.pedirCadena("Introduce el nombre del usuario");
+		if (encontrar(nombre, usuarios)) {
+			String psswd = usuarios.get(nombre);
+			String contra = "";
+			for (int i = 0; i < psswd.length(); i++) {
+				contra += (char) (psswd.charAt(i) - 2);
+			}
+			if (contra.equals(prueba)) {
+				return true;
+			} else {
+				return false;
+			}
+		}
+	}
+
+	public static Integer menu() {
+		return Leer.pedirEntero("1. Insertar usuario, clave\n2. Borrar usuarios\n3. Modificar claves de un usuario"
+				+ "\n4.Validar a un usuario si su clave es correcta");
+	}
+
+	public static boolean modificarClave(TreeMap<String, String> usuarios) {
+		String nombre = Leer.pedirCadena("Introduce el nombre del usuario a modificar");
+		if (encontrar(nombre, usuarios)) {
+			String pwd = Leer.pedirCadena("Introduce la nueva contraseña");
+			pwd = codificar(pwd);
+			usuarios.remove(nombre);
+			usuarios.put(nombre, pwd);
+			return true;
+		}
+		return false;
+
+	}
+
+	public static boolean insertarUsuario(TreeMap<String, String> usuarios) {
+		String nombre = Leer.pedirCadena("Introduce el nombre del usuario");
+		if (encontrar(nombre, usuarios)) {
+			Leer.mostrarEnPantalla("Ya existe un usuario con ese nombre");
+			return false;
+		}
+		String pswd = Leer.pedirCadena("Introduce la contraseña");
+		usuarios.put(nombre, codificar(pswd));
+		return true;
+	}
+
+	public static boolean encontrar(String nombre, TreeMap<String, String> usuarios) {
+		if (usuarios.containsKey(nombre)) {
+			return true;
+		} else
+			return false;
+	}
+
+	public static boolean borrarUsuario(TreeMap<String, String> usuarios) {
+		String nombre = Leer.pedirCadena("Introduce el nombre del usuario a borrar");
+		if (encontrar(nombre, usuarios)) {
+			usuarios.remove(nombre);
+			return true;
+		} else {
+			return false;
+		}
+	}
+}
