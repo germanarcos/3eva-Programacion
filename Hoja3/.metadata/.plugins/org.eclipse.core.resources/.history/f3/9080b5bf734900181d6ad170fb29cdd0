@@ -1,0 +1,27 @@
+import java.util.HashSet;
+
+public class Plato {
+	Ingrediente[] ingredientes = new Ingrediente[];
+	String nombre;
+
+	Plato(Ingrediente[] ingredientes) {
+		for (int i = 0; i < ingredientes.length; i++) {
+			this.ingredientes.add(ingredientes[i]);
+		}
+	}
+
+	private String nombreAleatorio() {
+		int var = ingredientes.size();
+		switch (var) {
+		case 1:
+			return ingredientes.
+			break;
+		case 2:
+			break;
+		case 3:
+			break;
+		case 0:
+			return "Pieza de ceramica redonda.";
+		}
+	}
+}

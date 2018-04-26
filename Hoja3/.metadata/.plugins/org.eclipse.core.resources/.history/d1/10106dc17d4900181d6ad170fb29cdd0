@@ -1,0 +1,9 @@
+
+public class Mesa {
+	public final int numeroMesa;
+	public static int siguienteMesa=0;
+	public final int maximoComensales=6;
+	Mesa(){
+		numeroMesa=siguienteMesa++;
+	}
+}

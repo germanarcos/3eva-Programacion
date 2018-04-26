@@ -1,0 +1,7 @@
+
+public class manejoFichero {
+
+	public static void escribir (TreeMap<String, Usuario> mapa){
+		
+	}
+}

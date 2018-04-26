@@ -1,0 +1,8 @@
+
+public class Menu {
+
+	Plato[] platos = new Plato[2];
+	Menu(Plato[] platos){
+		this.platos=platos;
+	}
+}

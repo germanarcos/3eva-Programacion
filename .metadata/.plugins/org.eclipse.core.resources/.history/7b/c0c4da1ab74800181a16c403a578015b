@@ -1,0 +1,35 @@
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.util.TreeMap;
+
+public class manejoFichero {
+
+	public static void escribir (TreeMap<String, Usuario> usuarios){
+		try {
+			ObjectOutputStream fichero = new ObjectOutputStream(new FileOutputStream("ficheroDatos.dat"));
+			for (String i : usuarios.keySet()) {
+				fichero.writeObject(usuarios.get(i));
+			}
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return;
+		}
+	}
+	public static void obtener (TreeMap<String, Usuario> usuarios){
+		ObjectInputStream ficheroLectura = null;
+		try{
+			boolean hayDatos = true;
+			Usuario usuario;
+			ficheroLectura = new ObjectInputStream(new FileInputStream("ficheroDatos.dat"));
+			while(hayDatos){
+				try{
+					usuario = (Usuario)ficheroLectura.readObject();
+				}
+			}
+		}
+	}
+}

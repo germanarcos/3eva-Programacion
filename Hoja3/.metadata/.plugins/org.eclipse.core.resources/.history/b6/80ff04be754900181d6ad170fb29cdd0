@@ -1,0 +1,13 @@
+
+public class Comedor {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Ingrediente[] ingredientes = new Ingrediente[];
+		Plato plato = new Plato({})
+	}
+
+	public static Ingrediente[] crearIngredientes(){
+		Ingrediente[] ingredientes = new Ingrediente[10];
+	}
+}

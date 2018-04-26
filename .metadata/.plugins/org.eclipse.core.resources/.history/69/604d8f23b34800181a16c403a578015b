@@ -1,0 +1,8 @@
+
+public class Clase {
+	String hola;
+
+	Clase(String hola) {
+		this.hola = hola;
+	}
+}

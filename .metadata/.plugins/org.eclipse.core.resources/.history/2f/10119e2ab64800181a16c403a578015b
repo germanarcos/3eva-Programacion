@@ -1,0 +1,21 @@
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
+import java.util.TreeMap;
+
+public class manejoFichero {
+
+	public static void escribir (TreeMap<String, Usuario> usuarios){
+		try {
+			ObjectOutputStream fichero = new ObjectOutputStream(new FileOutputStream("ficheroClase.dat"));
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return;
+		}
+
+		for (String i : usuarios.keySet()) {
+			
+		}
+	}
+}

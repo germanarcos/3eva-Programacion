@@ -1,0 +1,5 @@
+
+public class Menu {
+
+	Plato[] platos = new Plato[2];
+}

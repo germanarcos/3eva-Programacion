@@ -1,0 +1,10 @@
+import java.util.Arrays;
+
+public class Menu {
+
+	Plato[] platos;
+	Integer precio;
+	Menu(Plato[] platos) {
+		this.platos = Arrays.copyOfRange(platos, 0, 2);
+	}
+}

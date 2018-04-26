@@ -1,0 +1,33 @@
+
+public class Comedor {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Ingrediente[] ingredientes = crearIngredientes();
+		for (int i = 0; i < 10; i++) {
+			Plato plato = new Plato(ingredientesAleatorios(ingredientes));
+			System.out.println(plato.toString());
+		}
+	}
+
+	public static Ingrediente[] crearIngredientes() {
+		Ingrediente[] ingredientes = new Ingrediente[10];
+		String nombres[] = { "Croquetas", "Pimientos", "Mortadela", "Champiñones", "Ternera", "Tortilla", "Huevos",
+				"Mierda", "Jamón", "Espárragos", "Patatas", "Cebolla", "Anís" + "Orégano", "Queso", "Tomate", "Cebolla",
+				"Pimiento", "Macarrones", "Bacon", "Zanahoria", "Chorizo", "Morcilla", "Berenjena", };
+		for (int i = 0; i < ingredientes.length; i++) {
+			ingredientes[i] = new Ingrediente(nombres[i]);
+		}
+		return ingredientes;
+	}
+
+	public static Ingrediente[] ingredientesAleatorios(Ingrediente[] ingredientes) {
+		int numeroIngr = (int) (Math.random() * 5 + 0);
+		Ingrediente[] ingredientesPlato = new Ingrediente[numeroIngr];
+		for (int i = 0; i < ingredientesPlato.length; i++) {
+			ingredientesPlato[i] = ingredientes[(int) (Math.random() * ingredientes.length)];
+		}
+		return ingredientesPlato;
+
+	}
+}

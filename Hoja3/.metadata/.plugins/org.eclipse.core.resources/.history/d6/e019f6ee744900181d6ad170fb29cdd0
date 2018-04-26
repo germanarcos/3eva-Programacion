@@ -1,0 +1,16 @@
+import java.util.Arrays;
+
+public class Menu {
+
+	Plato[] platos;
+	Integer precio;
+	Menu(Plato[] platos) {
+		this.platos = Arrays.copyOfRange(platos, 0, 2);
+	}
+	private void calcularPrecio(){
+		precio = 0;
+		for(Plato p: platos){
+			precio+=p.getPrecio();
+		}
+	}
+}

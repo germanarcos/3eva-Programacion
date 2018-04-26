@@ -1,8 +1,0 @@
-
-public class Admin extends Usuario{
-
-	public Admin(String nombre, String contraEncriptada) {
-		super(nombre, contraEncriptada);
-	}
-	
-}

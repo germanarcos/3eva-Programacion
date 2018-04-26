@@ -1,0 +1,25 @@
+package asdf;
+
+import java.util.Random;
+
+public class tonto {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		float mark;
+		Random random = new Random();
+		mark = (random.nextFloat()* 100f);
+
+		while(mark <99f && mark>101f){
+			mark = (random.nextFloat()* 100f);
+			System.out.println(mark);
+
+		}
+//		do{
+//		mark = (random.nextFloat()* 100f);
+//		System.out.println(mark);
+//		}while(mark<(float)99 && mark>(float)101);
+
+	}
+
+}
