@@ -1,8 +1,0 @@
-import java.util.TreeMap;
-
-public class manejoFichero {
-
-	public static void escribir (TreeMap<String, Usuario> mapa){
-		for (String i : usuarios.keySet()) {
-	}
-}

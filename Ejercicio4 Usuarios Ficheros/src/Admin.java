@@ -6,14 +6,6 @@ public class Admin extends Usuario {
 		super(nombre, contraEncriptada);
 	}
 
-	public String getNombreOtro(Usuario user) {
-		return user.getNombre();
-	}
-
-	public void setNombreOtro(String nombre, Usuario user) {
-		user.setNombre(nombre);
-	}
-
 	public String ban(Usuario user) {
 		if (user.baneado) {
 			return ("El usuario " + user.getNombre() + " ya estaba baneado.");
