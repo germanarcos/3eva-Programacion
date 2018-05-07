@@ -1,0 +1,8 @@
+
+public class Tren {
+	Integer numero;
+	Hora hora;
+	Fecha fecha;
+	Estacion estacionSalida;
+	Estacion estacionLlegada;
+}

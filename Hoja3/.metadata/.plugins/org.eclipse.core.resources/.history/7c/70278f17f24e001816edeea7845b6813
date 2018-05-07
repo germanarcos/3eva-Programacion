@@ -1,0 +1,25 @@
+
+public class Hora {
+	Integer hora;
+	Integer minuto;
+	public Hora(Integer hora, Integer minuto) {
+		hora = hora;
+		minuto = minuto;
+	}
+	public Integer getHora() {
+		return hora;
+	}
+	public void setHora(Integer hora) {
+		hora = hora;
+	}
+	public Integer getMinuto() {
+		return minuto;
+	}
+	public void setMinuto(Integer minuto) {
+		minuto = minuto;
+	}
+	public static Hora horaValida(Integer hora, Integer minuto){
+		Hora valida = new Hora(23,00);
+		return valida;
+	}
+}

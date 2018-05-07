@@ -1,0 +1,11 @@
+
+public class Billete {
+
+	/*
+	 * posInicio=0; while(posInicio!=-1){
+	 * 
+	 * cadena = cadena.substring(posInicio); Usuario =
+	 * cadena.substring(0,cadena.indexOf(" "); posinicio = cadena.indexOf(" ");
+	 * }
+	 */
+}

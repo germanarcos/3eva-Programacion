@@ -1,8 +1,0 @@
-
-public class Mesa {
-	public final int numeroMesa;
-	public static int siguienteMesa;
-	Mesa(){
-		numeroMesa=siguienteMesa++;
-	}
-}

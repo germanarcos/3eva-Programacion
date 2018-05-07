@@ -1,9 +1,0 @@
-
-public class Carta {
-
-	Plato[] platos = new Plato[6];
-	
-	Carta(Plato[]platos){
-		this.platos=platos;
-	}
-}

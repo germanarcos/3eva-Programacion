@@ -1,5 +1,0 @@
-
-public class Carta {
-
-	Plato[] platos = new Plato[6];
-}

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+		<item value="C:\Users\usuario\Desktop\Asignaturas\Programacion\tema_13\EjemploDataInputStream"/>
+		<item value="C:\Users\usuario\Desktop\Asignaturas\Programacion\tema_13\EjemploDataOutputStream"/>
+		<item value="C:\Users\usuario\Desktop\Asignaturas\Programacion\tema_13\EjemploFileReader"/>
+		<item value="C:\Users\usuario\Desktop\Asignaturas\Programacion\tema_13\EjemploFileWriter"/>
+		<item value="C:\Users\usuario\Desktop\Asignaturas\Programacion\tema_13"/>
+	</list>
+</section>

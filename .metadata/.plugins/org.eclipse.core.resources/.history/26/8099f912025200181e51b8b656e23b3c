@@ -1,0 +1,74 @@
+import java.io.EOFException;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.DataInputStream;
+import java.io.DataOutputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.util.TreeMap;
+
+public class manejoFichero {
+
+	public static boolean escribir(TreeMap<String, Usuario> usuarios) {
+		String nombre;
+		nombre = Leer.pedirCadena("¿Cómo quieres llamar al fichero?");
+		try {
+			FileOutputStream fichero = new FileOutputStream(nombre);
+			DataOutputStream salida = new DataOutputStream(fichero);
+			for (String i : usuarios.keySet()) {
+				Usuario temp = usuarios.get(i);
+				if (temp instanceof Admin) {
+					salida.writeUTF("Admin");
+				} else {
+					salida.writeUTF("Usuario");
+				}
+				salida.writeUTF(temp.getNombre());
+				salida.writeUTF(temp.getContraEncriptada());
+				salida.writeBoolean(temp.isBaneado());
+			}
+			return true;
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return false;
+		}
+	}
+
+	public static boolean obtener(TreeMap<String, Usuario> usuarios) {
+		FileInputStream ficheroLectura = null;
+		String ruta;
+		File directorio = new File("./");
+		if (directorio.isDirectory()) {
+			for (int i = 0; i < directorio.list().length; i++) {
+				Leer.mostrarEnPantalla(directorio.list()[i]);
+			}
+		}
+		ruta = Leer.pedirCadena("¿Que fichero quieres utilizar?");
+		try {
+			boolean hayDatos = true;
+			Usuario usuario;
+			Admin admin;
+			ficheroLectura = new FileInputStream(ruta);
+			usuarios.clear();
+			while (hayDatos) {
+				try {
+					
+				} catch (Exception algoMal) {
+					algoMal.printStackTrace();
+					hayDatos = false;
+				}
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+			return false;
+		} finally {
+			try {
+				ficheroLectura.close();
+			} catch (Exception ex) {
+				ex.printStackTrace();
+			}
+		}
+		return true;
+	}
+}
