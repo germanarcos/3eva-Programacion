@@ -1,0 +1,11 @@
+
+public class Billete {
+	Integer numeroBillete;
+	static Integer ultimoBillete = 1;
+	Double precio;
+	Fecha fecha;
+	Hora hora;
+	Tren tren;
+	Vagon vagon;
+	Integer asiento;
+}

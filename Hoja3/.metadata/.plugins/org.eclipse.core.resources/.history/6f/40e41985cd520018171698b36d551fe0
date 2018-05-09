@@ -1,0 +1,12 @@
+import java.util.ArrayList;
+import java.util.HashSet;
+
+public class Tren {
+	static Integer siguienteNumero;
+	Integer numero;
+	Hora hora;
+	Fecha fecha;
+	Estacion estacionSalida;
+	Estacion estacionLlegada;
+	ArrayList<Vagon>vagones;
+}

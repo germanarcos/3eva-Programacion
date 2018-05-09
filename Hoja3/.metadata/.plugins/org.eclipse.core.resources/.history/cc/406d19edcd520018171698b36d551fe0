@@ -1,0 +1,6 @@
+
+public class Vagon {
+	Tren tren;
+	Integer[] asientos = new Integer[10];
+	Integer numero;
+}

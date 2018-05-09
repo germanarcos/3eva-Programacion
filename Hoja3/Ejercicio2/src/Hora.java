@@ -8,6 +8,10 @@ public class Hora {
 		this.minuto = minutoValido(minuto);
 	}
 
+	
+	public String toString(){
+		return hora+":"+minuto;
+	}
 	public Integer getHora() {
 		return hora;
 	}

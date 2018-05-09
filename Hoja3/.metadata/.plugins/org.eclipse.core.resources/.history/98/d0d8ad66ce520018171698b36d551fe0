@@ -1,0 +1,59 @@
+import java.util.LinkedHashSet;
+
+public class Tren {
+	static Integer siguienteNumero;
+	Integer numero;
+	Hora hora;
+	Fecha fecha;
+	Estacion estacionSalida;
+	Estacion estacionLlegada;
+	LinkedHashSet<Vagon> vagones;
+
+	
+	public Tren(Hora hora, Fecha fecha, Estacion estacionSalida, Estacion estacionLlegada,
+			LinkedHashSet<Vagon> vagones) {
+		siguienteNumero++;
+		this.numero = siguienteNumero;
+		this.hora = hora;
+		this.fecha = fecha;
+		this.estacionSalida = estacionSalida;
+		this.estacionLlegada = estacionLlegada;
+		this.vagones = vagones;
+	}
+	public Integer getNumero() {
+		return numero;
+	}
+	public void setNumero(Integer numero) {
+		this.numero = numero;
+	}
+	public Hora getHora() {
+		return hora;
+	}
+	public void setHora(Hora hora) {
+		this.hora = hora;
+	}
+	public Fecha getFecha() {
+		return fecha;
+	}
+	public void setFecha(Fecha fecha) {
+		this.fecha = fecha;
+	}
+	public Estacion getEstacionSalida() {
+		return estacionSalida;
+	}
+	public void setEstacionSalida(Estacion estacionSalida) {
+		this.estacionSalida = estacionSalida;
+	}
+	public Estacion getEstacionLlegada() {
+		return estacionLlegada;
+	}
+	public void setEstacionLlegada(Estacion estacionLlegada) {
+		this.estacionLlegada = estacionLlegada;
+	}
+	public LinkedHashSet<Vagon> getVagones() {
+		return vagones;
+	}
+	public void setVagones(LinkedHashSet<Vagon> vagones) {
+		this.vagones = vagones;
+	}
+}

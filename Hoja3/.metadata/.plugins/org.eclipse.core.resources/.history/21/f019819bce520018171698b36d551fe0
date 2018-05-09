@@ -1,0 +1,29 @@
+
+public class Vagon {
+	Tren tren;
+	Integer[] asientos = new Integer[10];
+	Integer numero;
+	public Tren getTren() {
+		return tren;
+	}
+	public void setTren(Tren tren) {
+		this.tren = tren;
+	}
+	public Integer getNumero() {
+		return numero;
+	}
+	public void setNumero(Integer numero) {
+		this.numero = numero;
+	}
+	public void inicializarAsientos(){
+		for(int i = 0;i<asientos.length;i++){
+			asientos[i] = null;
+		}
+	}
+	public Vagon(Tren tren, Integer[] asientos, Integer numero) {
+		super();
+		this.tren = tren;
+		inicializarAsientos();
+		this.numero = numero;
+	}
+}

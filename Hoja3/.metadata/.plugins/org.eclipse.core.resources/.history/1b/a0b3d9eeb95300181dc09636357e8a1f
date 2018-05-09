@@ -1,0 +1,5 @@
+import java.util.TreeSet;
+
+public class GestionVenta {
+	TreeSet<Billete> billetaje = new TreeSet<Billete>();
+}
