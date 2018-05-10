@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class Tren {
+public class Tren implements Comparable<Tren> {
 	static Integer siguienteNumero = 0;
 	Integer numero;
 	Double precio;
@@ -11,14 +11,27 @@ public class Tren {
 	ArrayList<Vagon> vagones;
 	private Integer ultimoVagon;
 
-	public Tren(Hora hora, Fecha fecha, Estacion estacionSalida, Estacion estacionLlegada) {
+	public Tren(Hora hora, Fecha fecha, Estacion estacionSalida, Estacion estacionLlegada, Double precio) {
 		siguienteNumero++;
 		this.numero = siguienteNumero;
 		this.hora = hora;
 		this.fecha = fecha;
 		this.estacionSalida = estacionSalida;
 		this.estacionLlegada = estacionLlegada;
+		this.precio = precio;
 		inicializarVagones();
+	}
+
+	public String toString() {
+		String devolver;
+		devolver = "\nTren numero: " + numero;
+		devolver += "\nCon salida en: " + estacionSalida.getNombre();
+		devolver += "\nDestino: " + estacionLlegada.getNombre();
+		devolver += "\n" + fecha.toString() + hora.toString();
+		devolver += "\nNumero de vagones: " + vagones.size();
+		devolver += "\nPrecio por billete: " + precio;
+		return devolver;
+
 	}
 
 	public Double getPrecio() {
@@ -93,13 +106,19 @@ public class Tren {
 		for (Vagon v : vagones) {
 			if (!v.lleno()) {
 				Billete billete = new Billete(precio, fecha, hora, this, v);
-				billete.darAsiento(v.darAsiento(billete));
+				billete.setAsiento(v.darAsiento(billete));
 				return billete;
 			}
 		}
 		anadirVagon();
 		Billete billete = new Billete(precio, fecha, hora, this, vagones.get(ultimoVagon));
-		billete.darAsiento(vagones.get(ultimoVagon).darAsiento(billete));
+		billete.setAsiento(vagones.get(ultimoVagon).darAsiento(billete));
 		return billete;
+	}
+
+	@Override
+	public int compareTo(Tren tren) {
+		// TODO Auto-generated method stub
+		return numero - tren.getNumero();
 	}
 }

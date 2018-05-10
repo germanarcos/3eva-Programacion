@@ -1,3 +1,4 @@
+import java.util.Comparator;
 
 public class Billete implements Comparable<Billete> {
 	Integer numeroBillete;
@@ -27,10 +28,11 @@ public class Billete implements Comparable<Billete> {
 		devolver += "\nTren numero " + tren.getNumero();
 		devolver += "\nVagon numero " + vagon.getNumero();
 		devolver += "\nAsiento numero " + asiento;
+		devolver += "\nPrecio: " + precio;
 		return devolver;
 	}
 
-	public void darAsiento(Integer asiento) {
+	public void setAsiento(Integer asiento) {
 		this.asiento = asiento;
 	}
 
@@ -103,13 +105,53 @@ public class Billete implements Comparable<Billete> {
 		return asiento;
 	}
 
-	public void setAsiento(Integer asiento) {
-		this.asiento = asiento;
-	}
-
 	@Override
 	public int compareTo(Billete bill) {
 		// TODO Auto-generated method stub
 		return numeroBillete - bill.getNumeroBillete();
 	}
+
+	public static Comparator<Billete> comparadorFecha = new Comparator<Billete>(){
+		public int compare(Billete bill1, Billete bill2) {
+			// TODO Auto-generated method stub
+			int resultado;
+			resultado = bill1.getFecha().difFechas(bill2.getFecha());
+			if (resultado != 0) {
+				return resultado;
+			}
+			resultado = bill1.getTren().getNumero() - bill2.getTren().getNumero();
+			if (resultado != 0) {
+				return resultado;
+			}
+			resultado = bill1.getVagon().getNumero() - bill2.getVagon().getNumero();
+			if (resultado != 0) {
+				return resultado;
+			}
+			resultado = bill1.getAsiento() - bill2.getAsiento();
+			return resultado;
+		}
+
+	};
+	
+	public static Comparator<Billete> comparadorTren = new Comparator<Billete>(){
+		public int compare(Billete bill1, Billete bill2) {
+			// TODO Auto-generated method stub
+			int resultado;
+			resultado = bill1.getTren().getNumero() - bill2.getTren().getNumero();
+			if (resultado != 0) {
+				return resultado;
+			}
+			resultado = bill1.getFecha().difFechas(bill2.getFecha());
+			if (resultado != 0) {
+				return resultado;
+			}
+			resultado = bill1.getVagon().getNumero() - bill2.getVagon().getNumero();
+			if (resultado != 0) {
+				return resultado;
+			}
+			resultado = bill1.getAsiento() - bill2.getAsiento();
+			return resultado;
+		}
+	};
+	
 }

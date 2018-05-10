@@ -1,0 +1,5 @@
+1525973181781	Extract method 'crearBilletesYTrenes'
+1525973355688	Extract method 'listarBillete'
+1525974913986	Delete element
+1525974915829	Delete element
+1525975107321	Rename method 'darAsiento'

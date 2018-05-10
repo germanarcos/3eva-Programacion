@@ -1,0 +1,24 @@
+import java.util.Comparator;
+
+public class BilleteCompFecha implements Comparator<Billete> {
+
+	@Override
+	public int compare(Billete bill1, Billete bill2) {
+		// TODO Auto-generated method stub
+		int resultado;
+		resultado = bill1.getFecha().difFechas(bill2.getFecha());
+		if (resultado != 0) {
+			return resultado;
+		}
+		resultado = bill1.getTren().getNumero() - bill2.getTren().getNumero();
+		if (resultado != 0) {
+			return resultado;
+		}
+		resultado = bill1.getVagon().getNumero() - bill2.getVagon().getNumero();
+		if (resultado != 0) {
+			return resultado;
+		}
+		resultado = bill1.getAsiento() - bill2.getAsiento();
+	}
+
+}

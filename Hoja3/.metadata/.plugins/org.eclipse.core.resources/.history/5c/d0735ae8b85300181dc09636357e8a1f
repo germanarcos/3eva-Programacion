@@ -1,4 +1,0 @@
-
-public class GestionVenta {
-	TreeSet<Billete> billetaje = new TreeSet<Billete>();
-}

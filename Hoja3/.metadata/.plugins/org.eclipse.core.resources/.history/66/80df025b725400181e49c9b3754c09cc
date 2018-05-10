@@ -1,0 +1,4 @@
+
+public class BilleteCompFecha implements comparator<Billete> {
+
+}
